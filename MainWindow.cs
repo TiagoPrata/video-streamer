@@ -209,8 +209,9 @@ namespace WebcamApp
 
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
-            StopCamera();
+            // StopCamera();
             thread_file_stream?.Abort();
+            Environment.Exit(0);
         }
 
         private void startRecordingButton_Click(object sender, EventArgs e)
