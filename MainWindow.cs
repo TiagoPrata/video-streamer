@@ -45,12 +45,6 @@ namespace WebcamApp
 
         }
 
-        private void connectToCameraButton_Click(object sender, EventArgs e)
-        {
-            SetCameraSettings();
-            StartCamera();
-        }
-
         private void SetCameraSettings()
         {
             
@@ -211,7 +205,13 @@ namespace WebcamApp
         {
             // StopCamera();
             thread_file_stream?.Abort();
-            Environment.Exit(0);
+            try
+            {
+                Environment.Exit(0);
+            } catch (Exception)
+            {
+
+            }
         }
 
         private void startRecordingButton_Click(object sender, EventArgs e)
@@ -372,7 +372,7 @@ namespace WebcamApp
                         {
                             cameraOriginal.Image = (Bitmap)bitmap.Clone();
                             Bitmap resized = new Bitmap(bitmap, new Size(Decimal.ToInt32(nmbWidth.Value), Decimal.ToInt32(nmbHeight.Value)));
-                            AppendTextBox(Environment.NewLine + sendVideoFrames(resized));
+                            AppendTextBox(Environment.NewLine + Environment.NewLine + sendVideoFrames(resized));
                             //System.Console.WriteLine(sendVideoFrames(bitmap));
                         }
                         System.Threading.Thread.Sleep(Decimal.ToInt32(1000 / nmrFps.Value));
@@ -381,12 +381,6 @@ namespace WebcamApp
 
                 } while (chkLoop.Checked);
             }
-        }
-
-        private void btnStreamVideo_Click(object sender, EventArgs e)
-        {
-            thread_file_stream = new Thread(SendVideoStream);
-            thread_file_stream.Start();
         }
 
         private void btnSelectVideo_Click(object sender, EventArgs e)
@@ -402,6 +396,44 @@ namespace WebcamApp
             {
                 string selectedFileName = openFileDialog1.FileName;
                 txtVideoFile.Text = selectedFileName;
+            }
+        }
+
+        private void EnableVideoSource()
+        {
+            if (radVideo.Checked)
+            {
+                groupCamera.Enabled = false;
+                groupVideoFile.Enabled = true;
+            }
+            else
+            {
+                groupCamera.Enabled = true;
+                groupVideoFile.Enabled = false;
+            }
+        }
+
+        private void radVideo_CheckedChanged(object sender, EventArgs e)
+        {
+            EnableVideoSource();
+        }
+
+        private void radCamera_CheckedChanged(object sender, EventArgs e)
+        {
+            EnableVideoSource();
+        }
+
+        private void btnStartStreaming_Click(object sender, EventArgs e)
+        {
+            if (radVideo.Checked)
+            {
+                thread_file_stream = new Thread(SendVideoStream);
+                thread_file_stream.Start();
+            }
+            else
+            {
+                SetCameraSettings();
+                StartCamera();
             }
         }
     }
