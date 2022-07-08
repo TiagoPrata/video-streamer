@@ -110,7 +110,7 @@
             this.configurationGroupBox.Controls.Add(this.txtBodyContent);
             this.configurationGroupBox.Controls.Add(this.txtSendTo);
             this.configurationGroupBox.Controls.Add(this.lblSendTo);
-            this.configurationGroupBox.Location = new System.Drawing.Point(12, 12);
+            this.configurationGroupBox.Location = new System.Drawing.Point(353, 12);
             this.configurationGroupBox.Name = "configurationGroupBox";
             this.configurationGroupBox.Size = new System.Drawing.Size(309, 402);
             this.configurationGroupBox.TabIndex = 1;
@@ -122,7 +122,7 @@
             this.txtMethod.Location = new System.Drawing.Point(9, 76);
             this.txtMethod.Name = "txtMethod";
             this.txtMethod.Size = new System.Drawing.Size(153, 20);
-            this.txtMethod.TabIndex = 12;
+            this.txtMethod.TabIndex = 15;
             this.txtMethod.Text = "POST";
             // 
             // lblMethod
@@ -158,7 +158,7 @@
             this.txtBodyContent.Multiline = true;
             this.txtBodyContent.Name = "txtBodyContent";
             this.txtBodyContent.Size = new System.Drawing.Size(294, 75);
-            this.txtBodyContent.TabIndex = 1;
+            this.txtBodyContent.TabIndex = 16;
             this.txtBodyContent.Text = "{\"img_base64str\": \"$frame$\"}";
             // 
             // txtSendTo
@@ -166,7 +166,7 @@
             this.txtSendTo.Location = new System.Drawing.Point(9, 34);
             this.txtSendTo.Name = "txtSendTo";
             this.txtSendTo.Size = new System.Drawing.Size(294, 20);
-            this.txtSendTo.TabIndex = 8;
+            this.txtSendTo.TabIndex = 14;
             this.txtSendTo.Text = "http://localhost:5000/";
             // 
             // lblSendTo
@@ -190,7 +190,7 @@
             this.videoFrameRateComboBox.Location = new System.Drawing.Point(6, 139);
             this.videoFrameRateComboBox.Name = "videoFrameRateComboBox";
             this.videoFrameRateComboBox.Size = new System.Drawing.Size(213, 21);
-            this.videoFrameRateComboBox.TabIndex = 6;
+            this.videoFrameRateComboBox.TabIndex = 10;
             // 
             // label1
             // 
@@ -215,7 +215,7 @@
             this.connectToCameraButton.Location = new System.Drawing.Point(225, 33);
             this.connectToCameraButton.Name = "connectToCameraButton";
             this.connectToCameraButton.Size = new System.Drawing.Size(75, 21);
-            this.connectToCameraButton.TabIndex = 3;
+            this.connectToCameraButton.TabIndex = 8;
             this.connectToCameraButton.Text = "Connect";
             this.connectToCameraButton.UseVisualStyleBackColor = true;
             this.connectToCameraButton.Click += new System.EventHandler(this.connectToCameraButton_Click);
@@ -236,7 +236,7 @@
             this.videoResolutionComboBox.Location = new System.Drawing.Point(6, 99);
             this.videoResolutionComboBox.Name = "videoResolutionComboBox";
             this.videoResolutionComboBox.Size = new System.Drawing.Size(213, 21);
-            this.videoResolutionComboBox.TabIndex = 3;
+            this.videoResolutionComboBox.TabIndex = 9;
             // 
             // ResolutionLabel
             // 
@@ -253,7 +253,7 @@
             this.deviceComboBox.Location = new System.Drawing.Point(6, 34);
             this.deviceComboBox.Name = "deviceComboBox";
             this.deviceComboBox.Size = new System.Drawing.Size(213, 21);
-            this.deviceComboBox.TabIndex = 1;
+            this.deviceComboBox.TabIndex = 7;
             // 
             // deviceLabel
             // 
@@ -289,7 +289,7 @@
             this.refreshCameraSettingsButton.Location = new System.Drawing.Point(6, 224);
             this.refreshCameraSettingsButton.Name = "refreshCameraSettingsButton";
             this.refreshCameraSettingsButton.Size = new System.Drawing.Size(213, 23);
-            this.refreshCameraSettingsButton.TabIndex = 7;
+            this.refreshCameraSettingsButton.TabIndex = 13;
             this.refreshCameraSettingsButton.Text = "Refresh camera settings";
             this.refreshCameraSettingsButton.UseVisualStyleBackColor = true;
             this.refreshCameraSettingsButton.Click += new System.EventHandler(this.refreshCameraSettingsButton_Click);
@@ -299,7 +299,7 @@
             this.stopRecordingButton.Location = new System.Drawing.Point(120, 195);
             this.stopRecordingButton.Name = "stopRecordingButton";
             this.stopRecordingButton.Size = new System.Drawing.Size(103, 23);
-            this.stopRecordingButton.TabIndex = 2;
+            this.stopRecordingButton.TabIndex = 12;
             this.stopRecordingButton.Text = "Stop Recording";
             this.stopRecordingButton.UseVisualStyleBackColor = true;
             this.stopRecordingButton.Click += new System.EventHandler(this.stopRecordingButton_Click);
@@ -309,7 +309,7 @@
             this.startRecordingButton.Location = new System.Drawing.Point(6, 195);
             this.startRecordingButton.Name = "startRecordingButton";
             this.startRecordingButton.Size = new System.Drawing.Size(108, 23);
-            this.startRecordingButton.TabIndex = 1;
+            this.startRecordingButton.TabIndex = 11;
             this.startRecordingButton.Text = "Start Recording";
             this.startRecordingButton.UseVisualStyleBackColor = true;
             this.startRecordingButton.Click += new System.EventHandler(this.startRecordingButton_Click);
@@ -331,7 +331,7 @@
             this.txtResponse.Name = "txtResponse";
             this.txtResponse.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtResponse.Size = new System.Drawing.Size(1234, 202);
-            this.txtResponse.TabIndex = 0;
+            this.txtResponse.TabIndex = 17;
             this.txtResponse.TextChanged += new System.EventHandler(this.txtResponse_TextChanged);
             // 
             // groupBox1
@@ -339,10 +339,10 @@
             this.groupBox1.Controls.Add(this.lblOR);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Location = new System.Drawing.Point(327, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(335, 402);
-            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Stream Configuration";
             // 
@@ -393,7 +393,7 @@
             this.groupBox2.Location = new System.Drawing.Point(6, 20);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(310, 97);
-            this.groupBox2.TabIndex = 11;
+            this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Video File";
             // 
@@ -416,7 +416,7 @@
             0});
             this.nmrFps.Name = "nmrFps";
             this.nmrFps.Size = new System.Drawing.Size(63, 20);
-            this.nmrFps.TabIndex = 15;
+            this.nmrFps.TabIndex = 3;
             this.nmrFps.Value = new decimal(new int[] {
             30,
             0,
@@ -428,7 +428,7 @@
             this.btnSelectVideo.Location = new System.Drawing.Point(199, 19);
             this.btnSelectVideo.Name = "btnSelectVideo";
             this.btnSelectVideo.Size = new System.Drawing.Size(25, 21);
-            this.btnSelectVideo.TabIndex = 14;
+            this.btnSelectVideo.TabIndex = 1;
             this.btnSelectVideo.Text = "...";
             this.btnSelectVideo.UseVisualStyleBackColor = true;
             this.btnSelectVideo.Click += new System.EventHandler(this.btnSelectVideo_Click);
@@ -438,7 +438,7 @@
             this.btnStreamVideo.Location = new System.Drawing.Point(226, 19);
             this.btnStreamVideo.Name = "btnStreamVideo";
             this.btnStreamVideo.Size = new System.Drawing.Size(75, 21);
-            this.btnStreamVideo.TabIndex = 10;
+            this.btnStreamVideo.TabIndex = 2;
             this.btnStreamVideo.Text = "Stream";
             this.btnStreamVideo.UseVisualStyleBackColor = true;
             this.btnStreamVideo.Click += new System.EventHandler(this.btnStreamVideo_Click);
@@ -448,7 +448,7 @@
             this.txtVideoFile.Location = new System.Drawing.Point(7, 19);
             this.txtVideoFile.Name = "txtVideoFile";
             this.txtVideoFile.Size = new System.Drawing.Size(186, 20);
-            this.txtVideoFile.TabIndex = 13;
+            this.txtVideoFile.TabIndex = 0;
             // 
             // chkLoop
             // 
@@ -458,7 +458,7 @@
             this.chkLoop.Location = new System.Drawing.Point(255, 46);
             this.chkLoop.Name = "chkLoop";
             this.chkLoop.Size = new System.Drawing.Size(46, 17);
-            this.chkLoop.TabIndex = 11;
+            this.chkLoop.TabIndex = 4;
             this.chkLoop.Text = "loop";
             this.chkLoop.UseVisualStyleBackColor = true;
             // 
@@ -486,7 +486,7 @@
             0});
             this.nmbWidth.Name = "nmbWidth";
             this.nmbWidth.Size = new System.Drawing.Size(58, 20);
-            this.nmbWidth.TabIndex = 17;
+            this.nmbWidth.TabIndex = 5;
             this.nmbWidth.Value = new decimal(new int[] {
             640,
             0,
@@ -517,7 +517,7 @@
             0});
             this.nmbHeight.Name = "nmbHeight";
             this.nmbHeight.Size = new System.Drawing.Size(58, 20);
-            this.nmbHeight.TabIndex = 19;
+            this.nmbHeight.TabIndex = 6;
             this.nmbHeight.Value = new decimal(new int[] {
             480,
             0,
