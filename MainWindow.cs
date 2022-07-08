@@ -23,7 +23,7 @@ namespace WebcamApp
 
         private bool isProcessing;
 
-        private Thread thread;
+        private Thread thread_file_stream;
 
         public MainWindow()
         {
@@ -210,7 +210,7 @@ namespace WebcamApp
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
             StopCamera();
-            thread.Abort();
+            thread_file_stream?.Abort();
         }
 
         private void startRecordingButton_Click(object sender, EventArgs e)
@@ -383,8 +383,8 @@ namespace WebcamApp
 
         private void btnStreamVideo_Click(object sender, EventArgs e)
         {
-            thread = new Thread(SendVideoStream);
-            thread.Start();
+            thread_file_stream = new Thread(SendVideoStream);
+            thread_file_stream.Start();
         }
 
         private void btnSelectVideo_Click(object sender, EventArgs e)
