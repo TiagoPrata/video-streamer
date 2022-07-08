@@ -55,24 +55,30 @@
             this.controlsGroupBox = new System.Windows.Forms.GroupBox();
             this.txtResponse = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblOR = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblFps = new System.Windows.Forms.Label();
+            this.nmrFps = new System.Windows.Forms.NumericUpDown();
             this.btnSelectVideo = new System.Windows.Forms.Button();
+            this.btnStreamVideo = new System.Windows.Forms.Button();
             this.txtVideoFile = new System.Windows.Forms.TextBox();
             this.chkLoop = new System.Windows.Forms.CheckBox();
-            this.btnStreamVideo = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lblOR = new System.Windows.Forms.Label();
-            this.nmrFps = new System.Windows.Forms.NumericUpDown();
-            this.lblFps = new System.Windows.Forms.Label();
+            this.lblWidth = new System.Windows.Forms.Label();
+            this.nmbWidth = new System.Windows.Forms.NumericUpDown();
+            this.lblHeight = new System.Windows.Forms.Label();
+            this.nmbHeight = new System.Windows.Forms.NumericUpDown();
             this.cameraOutputGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cameraOriginal)).BeginInit();
             this.configurationGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.recordingActiveIconPictureBox)).BeginInit();
             this.controlsGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrFps)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmbWidth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmbHeight)).BeginInit();
             this.SuspendLayout();
             // 
             // cameraOutputGroupBox
@@ -80,7 +86,7 @@
             this.cameraOutputGroupBox.Controls.Add(this.cameraOriginal);
             this.cameraOutputGroupBox.Location = new System.Drawing.Point(668, 12);
             this.cameraOutputGroupBox.Name = "cameraOutputGroupBox";
-            this.cameraOutputGroupBox.Size = new System.Drawing.Size(601, 375);
+            this.cameraOutputGroupBox.Size = new System.Drawing.Size(601, 402);
             this.cameraOutputGroupBox.TabIndex = 0;
             this.cameraOutputGroupBox.TabStop = false;
             this.cameraOutputGroupBox.Text = "Video Output";
@@ -88,7 +94,7 @@
             // cameraOriginal
             // 
             this.cameraOriginal.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.cameraOriginal.Location = new System.Drawing.Point(10, 22);
+            this.cameraOriginal.Location = new System.Drawing.Point(10, 39);
             this.cameraOriginal.Name = "cameraOriginal";
             this.cameraOriginal.Size = new System.Drawing.Size(577, 338);
             this.cameraOriginal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -106,7 +112,7 @@
             this.configurationGroupBox.Controls.Add(this.lblSendTo);
             this.configurationGroupBox.Location = new System.Drawing.Point(12, 12);
             this.configurationGroupBox.Name = "configurationGroupBox";
-            this.configurationGroupBox.Size = new System.Drawing.Size(309, 375);
+            this.configurationGroupBox.Size = new System.Drawing.Size(309, 402);
             this.configurationGroupBox.TabIndex = 1;
             this.configurationGroupBox.TabStop = false;
             this.configurationGroupBox.Text = "Configuration";
@@ -311,7 +317,7 @@
             // controlsGroupBox
             // 
             this.controlsGroupBox.Controls.Add(this.txtResponse);
-            this.controlsGroupBox.Location = new System.Drawing.Point(12, 393);
+            this.controlsGroupBox.Location = new System.Drawing.Point(12, 420);
             this.controlsGroupBox.Name = "controlsGroupBox";
             this.controlsGroupBox.Size = new System.Drawing.Size(1257, 236);
             this.controlsGroupBox.TabIndex = 2;
@@ -335,10 +341,87 @@
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Location = new System.Drawing.Point(327, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(335, 375);
+            this.groupBox1.Size = new System.Drawing.Size(335, 402);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Configuration";
+            // 
+            // lblOR
+            // 
+            this.lblOR.AutoSize = true;
+            this.lblOR.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOR.Location = new System.Drawing.Point(133, 123);
+            this.lblOR.Name = "lblOR";
+            this.lblOR.Size = new System.Drawing.Size(25, 13);
+            this.lblOR.TabIndex = 10;
+            this.lblOR.Text = "OR";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.deviceComboBox);
+            this.groupBox3.Controls.Add(this.recordingActiveIconPictureBox);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.startRecordingButton);
+            this.groupBox3.Controls.Add(this.recordingTimeLabel);
+            this.groupBox3.Controls.Add(this.stopRecordingButton);
+            this.groupBox3.Controls.Add(this.deviceLabel);
+            this.groupBox3.Controls.Add(this.snapshotFormatLabel);
+            this.groupBox3.Controls.Add(this.ResolutionLabel);
+            this.groupBox3.Controls.Add(this.videoFrameRateComboBox);
+            this.groupBox3.Controls.Add(this.videoResolutionComboBox);
+            this.groupBox3.Controls.Add(this.connectToCameraButton);
+            this.groupBox3.Controls.Add(this.refreshCameraSettingsButton);
+            this.groupBox3.Location = new System.Drawing.Point(6, 142);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(323, 254);
+            this.groupBox3.TabIndex = 11;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Camera";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lblHeight);
+            this.groupBox2.Controls.Add(this.nmbHeight);
+            this.groupBox2.Controls.Add(this.lblWidth);
+            this.groupBox2.Controls.Add(this.nmbWidth);
+            this.groupBox2.Controls.Add(this.lblFps);
+            this.groupBox2.Controls.Add(this.nmrFps);
+            this.groupBox2.Controls.Add(this.btnSelectVideo);
+            this.groupBox2.Controls.Add(this.btnStreamVideo);
+            this.groupBox2.Controls.Add(this.txtVideoFile);
+            this.groupBox2.Controls.Add(this.chkLoop);
+            this.groupBox2.Location = new System.Drawing.Point(6, 20);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(310, 97);
+            this.groupBox2.TabIndex = 11;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Video File";
+            // 
+            // lblFps
+            // 
+            this.lblFps.AutoSize = true;
+            this.lblFps.Location = new System.Drawing.Point(6, 48);
+            this.lblFps.Name = "lblFps";
+            this.lblFps.Size = new System.Drawing.Size(21, 13);
+            this.lblFps.TabIndex = 10;
+            this.lblFps.Text = "fps";
+            // 
+            // nmrFps
+            // 
+            this.nmrFps.Location = new System.Drawing.Point(32, 46);
+            this.nmrFps.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmrFps.Name = "nmrFps";
+            this.nmrFps.Size = new System.Drawing.Size(63, 20);
+            this.nmrFps.TabIndex = 15;
+            this.nmrFps.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
             // 
             // btnSelectVideo
             // 
@@ -349,6 +432,16 @@
             this.btnSelectVideo.Text = "...";
             this.btnSelectVideo.UseVisualStyleBackColor = true;
             this.btnSelectVideo.Click += new System.EventHandler(this.btnSelectVideo_Click);
+            // 
+            // btnStreamVideo
+            // 
+            this.btnStreamVideo.Location = new System.Drawing.Point(226, 19);
+            this.btnStreamVideo.Name = "btnStreamVideo";
+            this.btnStreamVideo.Size = new System.Drawing.Size(75, 21);
+            this.btnStreamVideo.TabIndex = 10;
+            this.btnStreamVideo.Text = "Stream";
+            this.btnStreamVideo.UseVisualStyleBackColor = true;
+            this.btnStreamVideo.Click += new System.EventHandler(this.btnStreamVideo_Click);
             // 
             // txtVideoFile
             // 
@@ -369,94 +462,73 @@
             this.chkLoop.Text = "loop";
             this.chkLoop.UseVisualStyleBackColor = true;
             // 
-            // btnStreamVideo
+            // lblWidth
             // 
-            this.btnStreamVideo.Location = new System.Drawing.Point(226, 19);
-            this.btnStreamVideo.Name = "btnStreamVideo";
-            this.btnStreamVideo.Size = new System.Drawing.Size(75, 21);
-            this.btnStreamVideo.TabIndex = 10;
-            this.btnStreamVideo.Text = "Stream";
-            this.btnStreamVideo.UseVisualStyleBackColor = true;
-            this.btnStreamVideo.Click += new System.EventHandler(this.btnStreamVideo_Click);
+            this.lblWidth.AutoSize = true;
+            this.lblWidth.Location = new System.Drawing.Point(6, 74);
+            this.lblWidth.Name = "lblWidth";
+            this.lblWidth.Size = new System.Drawing.Size(35, 13);
+            this.lblWidth.TabIndex = 16;
+            this.lblWidth.Text = "Width";
             // 
-            // groupBox2
+            // nmbWidth
             // 
-            this.groupBox2.Controls.Add(this.lblFps);
-            this.groupBox2.Controls.Add(this.nmrFps);
-            this.groupBox2.Controls.Add(this.btnSelectVideo);
-            this.groupBox2.Controls.Add(this.btnStreamVideo);
-            this.groupBox2.Controls.Add(this.txtVideoFile);
-            this.groupBox2.Controls.Add(this.chkLoop);
-            this.groupBox2.Location = new System.Drawing.Point(6, 20);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(310, 69);
-            this.groupBox2.TabIndex = 11;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Video File";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.deviceComboBox);
-            this.groupBox3.Controls.Add(this.recordingActiveIconPictureBox);
-            this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.startRecordingButton);
-            this.groupBox3.Controls.Add(this.recordingTimeLabel);
-            this.groupBox3.Controls.Add(this.stopRecordingButton);
-            this.groupBox3.Controls.Add(this.deviceLabel);
-            this.groupBox3.Controls.Add(this.snapshotFormatLabel);
-            this.groupBox3.Controls.Add(this.ResolutionLabel);
-            this.groupBox3.Controls.Add(this.videoFrameRateComboBox);
-            this.groupBox3.Controls.Add(this.videoResolutionComboBox);
-            this.groupBox3.Controls.Add(this.connectToCameraButton);
-            this.groupBox3.Controls.Add(this.refreshCameraSettingsButton);
-            this.groupBox3.Location = new System.Drawing.Point(6, 111);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(323, 254);
-            this.groupBox3.TabIndex = 11;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Camera";
-            // 
-            // lblOR
-            // 
-            this.lblOR.AutoSize = true;
-            this.lblOR.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOR.Location = new System.Drawing.Point(133, 95);
-            this.lblOR.Name = "lblOR";
-            this.lblOR.Size = new System.Drawing.Size(25, 13);
-            this.lblOR.TabIndex = 10;
-            this.lblOR.Text = "OR";
-            // 
-            // nmrFps
-            // 
-            this.nmrFps.Location = new System.Drawing.Point(32, 43);
-            this.nmrFps.Minimum = new decimal(new int[] {
+            this.nmbWidth.Location = new System.Drawing.Point(47, 72);
+            this.nmbWidth.Maximum = new decimal(new int[] {
+            1980,
+            0,
+            0,
+            0});
+            this.nmbWidth.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.nmrFps.Name = "nmrFps";
-            this.nmrFps.Size = new System.Drawing.Size(63, 20);
-            this.nmrFps.TabIndex = 15;
-            this.nmrFps.Value = new decimal(new int[] {
-            30,
+            this.nmbWidth.Name = "nmbWidth";
+            this.nmbWidth.Size = new System.Drawing.Size(58, 20);
+            this.nmbWidth.TabIndex = 17;
+            this.nmbWidth.Value = new decimal(new int[] {
+            640,
             0,
             0,
             0});
             // 
-            // lblFps
+            // lblHeight
             // 
-            this.lblFps.AutoSize = true;
-            this.lblFps.Location = new System.Drawing.Point(6, 45);
-            this.lblFps.Name = "lblFps";
-            this.lblFps.Size = new System.Drawing.Size(21, 13);
-            this.lblFps.TabIndex = 10;
-            this.lblFps.Text = "fps";
+            this.lblHeight.AutoSize = true;
+            this.lblHeight.Location = new System.Drawing.Point(110, 74);
+            this.lblHeight.Name = "lblHeight";
+            this.lblHeight.Size = new System.Drawing.Size(38, 13);
+            this.lblHeight.TabIndex = 18;
+            this.lblHeight.Text = "Height";
+            // 
+            // nmbHeight
+            // 
+            this.nmbHeight.Location = new System.Drawing.Point(151, 72);
+            this.nmbHeight.Maximum = new decimal(new int[] {
+            1980,
+            0,
+            0,
+            0});
+            this.nmbHeight.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmbHeight.Name = "nmbHeight";
+            this.nmbHeight.Size = new System.Drawing.Size(58, 20);
+            this.nmbHeight.TabIndex = 19;
+            this.nmbHeight.Value = new decimal(new int[] {
+            480,
+            0,
+            0,
+            0});
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1278, 643);
+            this.ClientSize = new System.Drawing.Size(1278, 667);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.controlsGroupBox);
             this.Controls.Add(this.configurationGroupBox);
@@ -474,11 +546,13 @@
             this.controlsGroupBox.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrFps)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmbWidth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmbHeight)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -520,6 +594,10 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblFps;
         private System.Windows.Forms.NumericUpDown nmrFps;
+        private System.Windows.Forms.Label lblWidth;
+        private System.Windows.Forms.NumericUpDown nmbWidth;
+        private System.Windows.Forms.Label lblHeight;
+        private System.Windows.Forms.NumericUpDown nmbHeight;
     }
 }
 

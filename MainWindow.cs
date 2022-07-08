@@ -371,7 +371,8 @@ namespace WebcamApp
                         using (var bitmap = (Bitmap)bmpBaseOriginal.Clone())
                         {
                             cameraOriginal.Image = (Bitmap)bitmap.Clone();
-                            AppendTextBox(Environment.NewLine + sendVideoFrames(bitmap));
+                            Bitmap resized = new Bitmap(bitmap, new Size(Decimal.ToInt32(nmbWidth.Value), Decimal.ToInt32(nmbHeight.Value)));
+                            AppendTextBox(Environment.NewLine + sendVideoFrames(resized));
                             //System.Console.WriteLine(sendVideoFrames(bitmap));
                         }
                         System.Threading.Thread.Sleep(Decimal.ToInt32(1000 / nmrFps.Value));
