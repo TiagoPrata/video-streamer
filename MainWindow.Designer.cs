@@ -115,7 +115,7 @@
             this.configurationGroupBox.Size = new System.Drawing.Size(309, 402);
             this.configurationGroupBox.TabIndex = 1;
             this.configurationGroupBox.TabStop = false;
-            this.configurationGroupBox.Text = "Configuration";
+            this.configurationGroupBox.Text = "Destination";
             // 
             // txtMethod
             // 
@@ -344,7 +344,7 @@
             this.groupBox1.Size = new System.Drawing.Size(335, 402);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Configuration";
+            this.groupBox1.Text = "Stream Configuration";
             // 
             // lblOR
             // 
