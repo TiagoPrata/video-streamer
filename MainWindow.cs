@@ -425,16 +425,27 @@ namespace WebcamApp
 
         private void btnStartStreaming_Click(object sender, EventArgs e)
         {
-            if (radVideo.Checked)
+            if (btnStartStreaming.Text == "&Start Streaming")
             {
-                thread_file_stream = new Thread(SendVideoStream);
-                thread_file_stream.Start();
+                if (radVideo.Checked)
+                {
+                    thread_file_stream = new Thread(SendVideoStream);
+                    thread_file_stream.Start();
+                }
+                else
+                {
+                    SetCameraSettings();
+                    StartCamera();
+                }
+                btnStartStreaming.Text = "STOP";
             }
             else
             {
-                SetCameraSettings();
-                StartCamera();
+                // restart application
+                System.Diagnostics.Process.Start(Application.ExecutablePath); // to start new instance of application
+                this.Close();
             }
+            
         }
     }
 }
