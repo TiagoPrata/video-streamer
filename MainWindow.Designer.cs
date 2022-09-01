@@ -69,6 +69,7 @@
             this.txtVideoFile = new System.Windows.Forms.TextBox();
             this.chkLoop = new System.Windows.Forms.CheckBox();
             this.btnStartStreaming = new System.Windows.Forms.Button();
+            this.btnClearResponse = new System.Windows.Forms.Button();
             this.cameraOutputGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cameraOriginal)).BeginInit();
             this.configurationGroupBox.SuspendLayout();
@@ -125,6 +126,7 @@
             this.txtMethod.Size = new System.Drawing.Size(153, 20);
             this.txtMethod.TabIndex = 15;
             this.txtMethod.Text = "POST";
+            this.txtMethod.TextChanged += new System.EventHandler(this.txtMethod_TextChanged);
             // 
             // lblMethod
             // 
@@ -161,6 +163,7 @@
             this.txtBodyContent.Size = new System.Drawing.Size(294, 75);
             this.txtBodyContent.TabIndex = 16;
             this.txtBodyContent.Text = "{\"img_base64str\": \"$frame$\"}";
+            this.txtBodyContent.TextChanged += new System.EventHandler(this.txtBodyContent_TextChanged);
             // 
             // txtSendTo
             // 
@@ -169,6 +172,7 @@
             this.txtSendTo.Size = new System.Drawing.Size(294, 20);
             this.txtSendTo.TabIndex = 14;
             this.txtSendTo.Text = "http://localhost:5000/";
+            this.txtSendTo.TextChanged += new System.EventHandler(this.txtSendTo_TextChanged);
             // 
             // lblSendTo
             // 
@@ -307,6 +311,7 @@
             // 
             // controlsGroupBox
             // 
+            this.controlsGroupBox.Controls.Add(this.btnClearResponse);
             this.controlsGroupBox.Controls.Add(this.txtResponse);
             this.controlsGroupBox.Location = new System.Drawing.Point(12, 420);
             this.controlsGroupBox.Name = "controlsGroupBox";
@@ -321,7 +326,7 @@
             this.txtResponse.Multiline = true;
             this.txtResponse.Name = "txtResponse";
             this.txtResponse.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtResponse.Size = new System.Drawing.Size(1149, 202);
+            this.txtResponse.Size = new System.Drawing.Size(1149, 179);
             this.txtResponse.TabIndex = 17;
             this.txtResponse.TextChanged += new System.EventHandler(this.txtResponse_TextChanged);
             // 
@@ -444,6 +449,7 @@
             0,
             0,
             0});
+            this.nmbHeight.ValueChanged += new System.EventHandler(this.nmbHeight_ValueChanged);
             // 
             // lblWidth
             // 
@@ -475,6 +481,7 @@
             0,
             0,
             0});
+            this.nmbWidth.ValueChanged += new System.EventHandler(this.nmbWidth_ValueChanged);
             // 
             // lblFps
             // 
@@ -501,6 +508,7 @@
             0,
             0,
             0});
+            this.nmrFps.ValueChanged += new System.EventHandler(this.nmrFps_ValueChanged);
             // 
             // btnSelectVideo
             // 
@@ -518,6 +526,7 @@
             this.txtVideoFile.Name = "txtVideoFile";
             this.txtVideoFile.Size = new System.Drawing.Size(186, 20);
             this.txtVideoFile.TabIndex = 0;
+            this.txtVideoFile.TextChanged += new System.EventHandler(this.txtVideoFile_TextChanged);
             // 
             // chkLoop
             // 
@@ -530,6 +539,7 @@
             this.chkLoop.TabIndex = 4;
             this.chkLoop.Text = "loop";
             this.chkLoop.UseVisualStyleBackColor = true;
+            this.chkLoop.CheckedChanged += new System.EventHandler(this.chkLoop_CheckedChanged);
             // 
             // btnStartStreaming
             // 
@@ -540,6 +550,16 @@
             this.btnStartStreaming.Text = "&Start Streaming";
             this.btnStartStreaming.UseVisualStyleBackColor = true;
             this.btnStartStreaming.Click += new System.EventHandler(this.btnStartStreaming_Click);
+            // 
+            // btnClearResponse
+            // 
+            this.btnClearResponse.Location = new System.Drawing.Point(1067, 204);
+            this.btnClearResponse.Name = "btnClearResponse";
+            this.btnClearResponse.Size = new System.Drawing.Size(91, 23);
+            this.btnClearResponse.TabIndex = 18;
+            this.btnClearResponse.Text = "Clear";
+            this.btnClearResponse.UseVisualStyleBackColor = true;
+            this.btnClearResponse.Click += new System.EventHandler(this.btnClearResponse_Click);
             // 
             // MainWindow
             // 
@@ -617,6 +637,7 @@
         private System.Windows.Forms.RadioButton radCamera;
         private System.Windows.Forms.RadioButton radVideo;
         private System.Windows.Forms.Button btnStartStreaming;
+        private System.Windows.Forms.Button btnClearResponse;
     }
 }
 

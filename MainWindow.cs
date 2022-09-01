@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using Accord.Video.FFMPEG;
 using AForge.Video;
 using AForge.Video.DirectShow;
+using videoStreamer.Properties;
 
 namespace WebcamApp
 {
@@ -43,6 +44,19 @@ namespace WebcamApp
             videoFrameRateComboBox.SelectedIndex = 2;
             FinalFrame = new VideoCaptureDevice();
 
+            // Load Settings
+            txtSendTo.Text = Settings.Default.txtSendTo;
+            txtMethod.Text = Settings.Default.txtMethod;
+            txtBodyContent.Text = Settings.Default.txtBodyContent;
+            radVideo.Checked = Settings.Default.radVideo;
+            radCamera.Checked = Settings.Default.radCamera;
+            EnableVideoSource();
+            txtVideoFile.Text = Settings.Default.txtVideoFile;
+            nmrFps.Value = Settings.Default.nmrFPS;
+            chkLoop.Checked = Settings.Default.chkLoop;
+            nmbWidth.Value = Settings.Default.nmbWidth;
+            nmbHeight.Value = Settings.Default.nmbHeight;
+            txtResponse.Text = Settings.Default.txtResponse;
         }
 
         private void SetCameraSettings()
@@ -356,6 +370,8 @@ namespace WebcamApp
         {
             txtResponse.SelectionStart = txtResponse.TextLength;
             txtResponse.ScrollToCaret();
+            Settings.Default.txtResponse = txtResponse.Text;
+            Settings.Default.Save();
         }
 
         public void SendVideoStream()
@@ -416,11 +432,15 @@ namespace WebcamApp
         private void radVideo_CheckedChanged(object sender, EventArgs e)
         {
             EnableVideoSource();
+            Settings.Default.radVideo = radVideo.Checked;
+            Settings.Default.Save();
         }
 
         private void radCamera_CheckedChanged(object sender, EventArgs e)
         {
             EnableVideoSource();
+            Settings.Default.radCamera = radCamera.Checked;
+            Settings.Default.Save();
         }
 
         private void btnStartStreaming_Click(object sender, EventArgs e)
@@ -446,6 +466,59 @@ namespace WebcamApp
                 this.Close();
             }
             
+        }
+
+        private void txtSendTo_TextChanged(object sender, EventArgs e)
+        {
+            Settings.Default.txtSendTo = txtSendTo.Text;
+            Settings.Default.Save();
+        }
+
+        private void txtMethod_TextChanged(object sender, EventArgs e)
+        {
+            Settings.Default.txtMethod = txtMethod.Text;
+            Settings.Default.Save();
+        }
+
+        private void txtBodyContent_TextChanged(object sender, EventArgs e)
+        {
+            Settings.Default.txtBodyContent = txtBodyContent.Text;
+            Settings.Default.Save();
+        }
+
+        private void txtVideoFile_TextChanged(object sender, EventArgs e)
+        {
+            Settings.Default.txtVideoFile = txtVideoFile.Text;
+            Settings.Default.Save();
+        }
+
+        private void nmrFps_ValueChanged(object sender, EventArgs e)
+        {
+            Settings.Default.nmrFPS = nmrFps.Value;
+            Settings.Default.Save();
+        }
+
+        private void chkLoop_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Default.chkLoop = chkLoop.Checked;
+            Settings.Default.Save();
+        }
+
+        private void nmbWidth_ValueChanged(object sender, EventArgs e)
+        {
+            Settings.Default.nmbWidth = nmbWidth.Value;
+            Settings.Default.Save();
+        }
+
+        private void nmbHeight_ValueChanged(object sender, EventArgs e)
+        {
+            Settings.Default.nmbHeight = nmbHeight.Value;
+            Settings.Default.Save();
+        }
+
+        private void btnClearResponse_Click(object sender, EventArgs e)
+        {
+            txtResponse.Text = "";
         }
     }
 }
