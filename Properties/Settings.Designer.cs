@@ -154,5 +154,17 @@ namespace videoStreamer.Properties {
                 this["txtResponse"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool chkPrintResponse {
+            get {
+                return ((bool)(this["chkPrintResponse"]));
+            }
+            set {
+                this["chkPrintResponse"] = value;
+            }
+        }
     }
 }

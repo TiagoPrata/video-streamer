@@ -50,13 +50,14 @@ namespace WebcamApp
             txtBodyContent.Text = Settings.Default.txtBodyContent;
             radVideo.Checked = Settings.Default.radVideo;
             radCamera.Checked = Settings.Default.radCamera;
-            EnableVideoSource();
             txtVideoFile.Text = Settings.Default.txtVideoFile;
             nmrFps.Value = Settings.Default.nmrFPS;
             chkLoop.Checked = Settings.Default.chkLoop;
             nmbWidth.Value = Settings.Default.nmbWidth;
             nmbHeight.Value = Settings.Default.nmbHeight;
             txtResponse.Text = Settings.Default.txtResponse;
+            chkPrintResponse.Checked = Settings.Default.chkPrintResponse;
+            EnableVideoSource();
         }
 
         private void SetCameraSettings()
@@ -66,19 +67,24 @@ namespace WebcamApp
 
         public void AppendTextBox(string value)
         {
-            try
+            if (chkPrintResponse.Checked)
             {
-                if (InvokeRequired)
+                try
                 {
-                    this.Invoke(new Action<string>(AppendTextBox), new object[] { value });
-                    return;
+                    if (InvokeRequired)
+                    {
+                        this.Invoke(new Action<string>(AppendTextBox), new object[] { value });
+                        return;
+                    }
+                    txtResponse.Text += value;
+
                 }
-                txtResponse.Text += value;
+                catch (Exception e)
+                {
 
-            } catch (Exception e)
-            {
-
+                }
             }
+            
         }
 
         private void FinalFrame_NewFrame(object sender, NewFrameEventArgs eventArgs)
@@ -163,6 +169,16 @@ namespace WebcamApp
                         StreamReader reader = new StreamReader(stream);
                         string strResponse = reader.ReadToEnd();
                         response_str = strResponse.Replace("\\", "");
+                    }
+
+                    if (radBase64.Checked)
+                    {
+                        response_str = response_str.Replace("\"", "");
+                        var pic = Convert.FromBase64String(response_str);
+                        using (MemoryStream ms = new MemoryStream(pic))
+                        {
+                            cameraOutput.Image = Image.FromStream(ms);
+                        }
                     }
                 }
             }
@@ -519,6 +535,12 @@ namespace WebcamApp
         private void btnClearResponse_Click(object sender, EventArgs e)
         {
             txtResponse.Text = "";
+        }
+
+        private void chkPrintResponse_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Default.chkPrintResponse = chkPrintResponse.Checked;
+            Settings.Default.Save();
         }
     }
 }

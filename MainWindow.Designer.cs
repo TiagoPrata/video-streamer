@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-            this.cameraOutputGroupBox = new System.Windows.Forms.GroupBox();
+            this.cameraSourceGroupBox = new System.Windows.Forms.GroupBox();
             this.cameraOriginal = new System.Windows.Forms.PictureBox();
             this.configurationGroupBox = new System.Windows.Forms.GroupBox();
             this.txtMethod = new System.Windows.Forms.TextBox();
@@ -70,7 +70,12 @@
             this.chkLoop = new System.Windows.Forms.CheckBox();
             this.btnStartStreaming = new System.Windows.Forms.Button();
             this.btnClearResponse = new System.Windows.Forms.Button();
-            this.cameraOutputGroupBox.SuspendLayout();
+            this.cameraOutputGroupBox = new System.Windows.Forms.GroupBox();
+            this.cameraOutput = new System.Windows.Forms.PictureBox();
+            this.radNone = new System.Windows.Forms.RadioButton();
+            this.radBase64 = new System.Windows.Forms.RadioButton();
+            this.chkPrintResponse = new System.Windows.Forms.CheckBox();
+            this.cameraSourceGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cameraOriginal)).BeginInit();
             this.configurationGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.recordingActiveIconPictureBox)).BeginInit();
@@ -81,24 +86,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmbHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmbWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrFps)).BeginInit();
+            this.cameraOutputGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cameraOutput)).BeginInit();
             this.SuspendLayout();
             // 
-            // cameraOutputGroupBox
+            // cameraSourceGroupBox
             // 
-            this.cameraOutputGroupBox.Controls.Add(this.cameraOriginal);
-            this.cameraOutputGroupBox.Location = new System.Drawing.Point(583, 12);
-            this.cameraOutputGroupBox.Name = "cameraOutputGroupBox";
-            this.cameraOutputGroupBox.Size = new System.Drawing.Size(601, 402);
-            this.cameraOutputGroupBox.TabIndex = 0;
-            this.cameraOutputGroupBox.TabStop = false;
-            this.cameraOutputGroupBox.Text = "Video Output";
+            this.cameraSourceGroupBox.Controls.Add(this.cameraOriginal);
+            this.cameraSourceGroupBox.Location = new System.Drawing.Point(583, 12);
+            this.cameraSourceGroupBox.Name = "cameraSourceGroupBox";
+            this.cameraSourceGroupBox.Size = new System.Drawing.Size(418, 402);
+            this.cameraSourceGroupBox.TabIndex = 0;
+            this.cameraSourceGroupBox.TabStop = false;
+            this.cameraSourceGroupBox.Text = "Video Source";
             // 
             // cameraOriginal
             // 
             this.cameraOriginal.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.cameraOriginal.Location = new System.Drawing.Point(10, 39);
+            this.cameraOriginal.Location = new System.Drawing.Point(6, 58);
             this.cameraOriginal.Name = "cameraOriginal";
-            this.cameraOriginal.Size = new System.Drawing.Size(577, 338);
+            this.cameraOriginal.Size = new System.Drawing.Size(400, 300);
             this.cameraOriginal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.cameraOriginal.TabIndex = 0;
             this.cameraOriginal.TabStop = false;
@@ -311,22 +318,23 @@
             // 
             // controlsGroupBox
             // 
+            this.controlsGroupBox.Controls.Add(this.chkPrintResponse);
             this.controlsGroupBox.Controls.Add(this.btnClearResponse);
             this.controlsGroupBox.Controls.Add(this.txtResponse);
             this.controlsGroupBox.Location = new System.Drawing.Point(12, 420);
             this.controlsGroupBox.Name = "controlsGroupBox";
-            this.controlsGroupBox.Size = new System.Drawing.Size(1172, 236);
+            this.controlsGroupBox.Size = new System.Drawing.Size(1413, 255);
             this.controlsGroupBox.TabIndex = 2;
             this.controlsGroupBox.TabStop = false;
             this.controlsGroupBox.Text = "Response";
             // 
             // txtResponse
             // 
-            this.txtResponse.Location = new System.Drawing.Point(9, 19);
+            this.txtResponse.Location = new System.Drawing.Point(9, 41);
             this.txtResponse.Multiline = true;
             this.txtResponse.Name = "txtResponse";
             this.txtResponse.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtResponse.Size = new System.Drawing.Size(1149, 179);
+            this.txtResponse.Size = new System.Drawing.Size(1392, 179);
             this.txtResponse.TabIndex = 17;
             this.txtResponse.TextChanged += new System.EventHandler(this.txtResponse_TextChanged);
             // 
@@ -553,7 +561,7 @@
             // 
             // btnClearResponse
             // 
-            this.btnClearResponse.Location = new System.Drawing.Point(1067, 204);
+            this.btnClearResponse.Location = new System.Drawing.Point(1310, 226);
             this.btnClearResponse.Name = "btnClearResponse";
             this.btnClearResponse.Size = new System.Drawing.Size(91, 23);
             this.btnClearResponse.TabIndex = 18;
@@ -561,21 +569,79 @@
             this.btnClearResponse.UseVisualStyleBackColor = true;
             this.btnClearResponse.Click += new System.EventHandler(this.btnClearResponse_Click);
             // 
+            // cameraOutputGroupBox
+            // 
+            this.cameraOutputGroupBox.Controls.Add(this.radBase64);
+            this.cameraOutputGroupBox.Controls.Add(this.radNone);
+            this.cameraOutputGroupBox.Controls.Add(this.cameraOutput);
+            this.cameraOutputGroupBox.Location = new System.Drawing.Point(1007, 12);
+            this.cameraOutputGroupBox.Name = "cameraOutputGroupBox";
+            this.cameraOutputGroupBox.Size = new System.Drawing.Size(418, 402);
+            this.cameraOutputGroupBox.TabIndex = 1;
+            this.cameraOutputGroupBox.TabStop = false;
+            this.cameraOutputGroupBox.Text = "Video Output";
+            // 
+            // cameraOutput
+            // 
+            this.cameraOutput.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cameraOutput.Location = new System.Drawing.Point(6, 58);
+            this.cameraOutput.Name = "cameraOutput";
+            this.cameraOutput.Size = new System.Drawing.Size(400, 300);
+            this.cameraOutput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.cameraOutput.TabIndex = 0;
+            this.cameraOutput.TabStop = false;
+            // 
+            // radNone
+            // 
+            this.radNone.AutoSize = true;
+            this.radNone.Checked = true;
+            this.radNone.Location = new System.Drawing.Point(6, 34);
+            this.radNone.Name = "radNone";
+            this.radNone.Size = new System.Drawing.Size(51, 17);
+            this.radNone.TabIndex = 1;
+            this.radNone.TabStop = true;
+            this.radNone.Text = "None";
+            this.radNone.UseVisualStyleBackColor = true;
+            // 
+            // radBase64
+            // 
+            this.radBase64.AutoSize = true;
+            this.radBase64.Location = new System.Drawing.Point(63, 34);
+            this.radBase64.Name = "radBase64";
+            this.radBase64.Size = new System.Drawing.Size(106, 17);
+            this.radBase64.TabIndex = 2;
+            this.radBase64.Text = "response base64";
+            this.radBase64.UseVisualStyleBackColor = true;
+            // 
+            // chkPrintResponse
+            // 
+            this.chkPrintResponse.AutoSize = true;
+            this.chkPrintResponse.Checked = true;
+            this.chkPrintResponse.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkPrintResponse.Location = new System.Drawing.Point(9, 18);
+            this.chkPrintResponse.Name = "chkPrintResponse";
+            this.chkPrintResponse.Size = new System.Drawing.Size(92, 17);
+            this.chkPrintResponse.TabIndex = 19;
+            this.chkPrintResponse.Text = "print response";
+            this.chkPrintResponse.UseVisualStyleBackColor = true;
+            this.chkPrintResponse.CheckedChanged += new System.EventHandler(this.chkPrintResponse_CheckedChanged);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1193, 667);
+            this.ClientSize = new System.Drawing.Size(1435, 687);
+            this.Controls.Add(this.cameraOutputGroupBox);
             this.Controls.Add(this.btnStartStreaming);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.controlsGroupBox);
             this.Controls.Add(this.configurationGroupBox);
-            this.Controls.Add(this.cameraOutputGroupBox);
+            this.Controls.Add(this.cameraSourceGroupBox);
             this.Name = "MainWindow";
             this.Text = "video-streamer";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.Load += new System.EventHandler(this.MainWindow_Load);
-            this.cameraOutputGroupBox.ResumeLayout(false);
+            this.cameraSourceGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cameraOriginal)).EndInit();
             this.configurationGroupBox.ResumeLayout(false);
             this.configurationGroupBox.PerformLayout();
@@ -591,13 +657,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmbHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmbWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrFps)).EndInit();
+            this.cameraOutputGroupBox.ResumeLayout(false);
+            this.cameraOutputGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cameraOutput)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox cameraOutputGroupBox;
+        private System.Windows.Forms.GroupBox cameraSourceGroupBox;
         private System.Windows.Forms.GroupBox configurationGroupBox;
         private System.Windows.Forms.ComboBox deviceComboBox;
         private System.Windows.Forms.Label deviceLabel;
@@ -638,6 +707,11 @@
         private System.Windows.Forms.RadioButton radVideo;
         private System.Windows.Forms.Button btnStartStreaming;
         private System.Windows.Forms.Button btnClearResponse;
+        private System.Windows.Forms.GroupBox cameraOutputGroupBox;
+        private System.Windows.Forms.PictureBox cameraOutput;
+        private System.Windows.Forms.RadioButton radBase64;
+        private System.Windows.Forms.RadioButton radNone;
+        private System.Windows.Forms.CheckBox chkPrintResponse;
     }
 }
 
