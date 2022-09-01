@@ -166,5 +166,17 @@ namespace videoStreamer.Properties {
                 this["chkPrintResponse"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool radBase64 {
+            get {
+                return ((bool)(this["radBase64"]));
+            }
+            set {
+                this["radBase64"] = value;
+            }
+        }
     }
 }

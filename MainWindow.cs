@@ -57,6 +57,7 @@ namespace WebcamApp
             nmbHeight.Value = Settings.Default.nmbHeight;
             txtResponse.Text = Settings.Default.txtResponse;
             chkPrintResponse.Checked = Settings.Default.chkPrintResponse;
+            radBase64.Checked = Settings.Default.radBase64;
             EnableVideoSource();
         }
 
@@ -540,6 +541,12 @@ namespace WebcamApp
         private void chkPrintResponse_CheckedChanged(object sender, EventArgs e)
         {
             Settings.Default.chkPrintResponse = chkPrintResponse.Checked;
+            Settings.Default.Save();
+        }
+
+        private void radBase64_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Default.radBase64 = radBase64.Checked;
             Settings.Default.Save();
         }
     }

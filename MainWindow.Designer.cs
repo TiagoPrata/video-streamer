@@ -612,6 +612,7 @@
             this.radBase64.TabIndex = 2;
             this.radBase64.Text = "response base64";
             this.radBase64.UseVisualStyleBackColor = true;
+            this.radBase64.CheckedChanged += new System.EventHandler(this.radBase64_CheckedChanged);
             // 
             // chkPrintResponse
             // 
