@@ -16,6 +16,8 @@ Every frame of your video will be converted to a string in base64 and then conca
 
 The response string is printed in the bottom textbox.
 
+![How it works](https://raw.githubusercontent.com/TiagoPrata/video-streamer/main/readme_images/how_it_works.gif)
+
 ### References
 
 [1] Original project: [WebcamApp](https://github.com/katarzynaB99/WebcamApp) from *katarzynaB99*
